@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SimplePopup"
+             x:Class="SimplePopup.MainPage">
+
+    <ContentPage.Content>
+
+
+
+        <AbsoluteLayout Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <StackLayout BackgroundColor="Azure" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" >
+
+                    <Label Text="Xamarin Monkeys" HorizontalOptions="Center" FontAttributes="Bold" FontSize="Medium"></Label>
+
+                    <Image x:Name="imgMonkey" HeightRequest="200" WidthRequest="200"></Image>
+
+                    <Button HorizontalOptions="Center" VerticalOptions="Center" Clicked="btnPopupButton_Clicked" Text="Show Popup"></Button>
+
+                </StackLayout>
+
+            </StackLayout>
+
+
+
+            <!--Popup Area-->
+
+            <ContentView x:Name="popupLoginView"  Padding="10, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <Frame BorderColor="Red" VerticalOptions="Center" HorizontalOptions="Center">
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+                        <StackLayout Orientation="Vertical" HeightRequest="250" WidthRequest="300" BackgroundColor="White">
+
+                            <Entry x:Name="name" Margin="20,20,20,10" Placeholder="Enter Place Name"></Entry>
+
+                            <Entry x:Name="address" Margin="20,0,20,0" Placeholder="Enter Address"></Entry>
+                            <Entry x:Name="note" Margin="20,0,20,0" Placeholder="Enter Note"></Entry>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    
+                                </Grid.ColumnDefinitions>
+                            <Button Grid.Column="2" Margin="20,0,20,0" Text="Cancel" Clicked="Button_Clicked"></Button>
+                            <Button  Grid.Column="3" Margin="20,0,20,0" Text="Save" Clicked="Button_Clicked"></Button>
+                            </Grid>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+
+
+
+                </Frame>
+
+
+            </ContentView>
+
+
+
+            <ContentView x:Name="popupLoadingView" BackgroundColor="#C0808080" Padding="10, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+                    <StackLayout Orientation="Vertical" HeightRequest="150" WidthRequest="200" BackgroundColor="White">
+
+
+
+                        <ActivityIndicator x:Name="activityIndicator" Margin="0,50,0,0" VerticalOptions="Center" HorizontalOptions="Center" Color="Black" WidthRequest="30" HeightRequest="30" ></ActivityIndicator>
+
+                        <Label x:Name="lblLoadingText" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" VerticalTextAlignment="Center" Text="Loading..."></Label>
+
+                    </StackLayout>
+
+                </StackLayout>
+
+            </ContentView>
+
+
+
+            <ContentView x:Name="popupListView" BackgroundColor="#C0808080" Padding="10, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+                    <StackLayout Orientation="Vertical" HeightRequest="200" WidthRequest="300" BackgroundColor="White">
+
+                        <ListView x:Name="sampleList">
+
+                        </ListView>
+
+                    </StackLayout>
+
+                </StackLayout>
+
+            </ContentView>
+
+
+
+            <ContentView x:Name="popupImageView" BackgroundColor="#C0808080" Padding="10, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+
+                    <StackLayout Orientation="Vertical" HeightRequest="200" WidthRequest="300" BackgroundColor="White">
+
+                        <Image WidthRequest="200" HeightRequest="200" x:Name="imgPopup"></Image>
+
+                    </StackLayout>
+
+                </StackLayout>
+
+            </ContentView>
+
+
+
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>
+
+
